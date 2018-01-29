@@ -1,4 +1,4 @@
-package own.fuys.ownbp;
+package org.fuys.ownbp;
 
 /**
  * Hello world!
