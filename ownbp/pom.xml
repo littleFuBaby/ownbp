@@ -1,0 +1,54 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>own.fuys</groupId>
+	<artifactId>ownbp</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<!-- This file,which is set as pom.xml of parent project,should change that 
+		packaging is pom -->
+	<packaging>pom</packaging>
+	<name>ownbp</name>
+	<url>http://maven.apache.org</url>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<!-- Define jdk version -->
+		<jdk.version>1.8</jdk.version>
+		<!-- Define maven compiler plugin version -->
+		<maven.compiler.plugin.version>3.7.0</maven.compiler.plugin.version>
+		<!-- Define maven source plugin version -->
+		<maven.source.plugin.version>3.0.1</maven.source.plugin.version>
+	</properties>
+	<!-- Configure build -->
+	<build>
+		<finalName>ownbp</finalName>
+		<!-- Configure plugins -->
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven.compiler.plugin.version}</version>
+				<configuration>
+					<source>${jdk.version}</source>
+					<target>${jdk.version}</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>${maven.source.plugin.version}</version>
+				<configuration>
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>
